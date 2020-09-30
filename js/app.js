@@ -75,11 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				const checkbox = event.target;
 				const checked = checkbox.checked;
 				const listItem = checkbox.parentNode.parentNode;
+				const labelText = checkbox.parentNode.firstChild;
 				//If box is checked it will change color
 				if (checked) {
 						listItem.className = 'responded';
+						labelText.textContent = 'Confirmed';
 				} else {
 						listItem.className = '';
+						labelText.textContent = 'Confirm';
 				}
 		});
 
