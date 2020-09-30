@@ -63,8 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				e.preventDefault(); //Prevents the page refreshing when a name is placed in the input and instead captures the name.
 				const text = input.value;
 				input.value = ''; //Clears the input once a name has been added
-				const li = createLi(text);
-				ul.appendChild(li); //new created element is passed to and displayed in the ul
+				if (text === '') {
+						alert('Please enter a name')
+				} else {
+						const li = createLi(text);
+						ul.appendChild(li); //new created element is passed to and displayed in the ul
+				}
 		})
 
 		ul.addEventListener('change', (e) => {
