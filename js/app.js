@@ -65,7 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				input.value = ''; //Clears the input once a name has been added
 				if (text === '') {
 						alert('Please enter a name')
-				} else {
+				// Hides the list element is the user adds a name when the checkbox filter is checked. 					
+				} else if (filterCheckBox.checked) {
+						const li = createLi(text);
+						ul.appendChild(li);
+						li.style.display = 'none';
+				}	else {
 						const li = createLi(text);
 						ul.appendChild(li); //new created element is passed to and displayed in the ul
 				}
